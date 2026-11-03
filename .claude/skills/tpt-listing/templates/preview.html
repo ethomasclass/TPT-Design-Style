@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TpT preview: the product</title>
+<!-- 16:9 preview, render at 1920 x 1080:  node scripts/render.mjs preview.html 1920 1080 preview.png
+     LEFT: a panel with the name, subject and 4-5 feature lines (bold claim + small proof).
+     RIGHT: one large real screenshot + two smaller ones + one real handout, each with a short label.
+     Use REAL screenshots of the product, never mock-ups. Restyle to match the thumbnail. -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root { --bg: #f4e6c4; --bg-2: #ead6a4; --paper: #fbf3de; --accent: #b3342e; --ink: #16263a; --gold: #e2b95a; --cool: #1d6f86;
+    --display: 'Rye', serif; --slab: 'Alfa Slab One', serif; --script: 'Lobster', cursive; --body: 'Atkinson Hyperlegible', sans-serif; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1920px; height: 1080px; overflow: hidden; position: relative; font-family: var(--body); background: var(--ink); }
+  .panel { position: absolute; left: 0; top: 0; bottom: 0; width: 760px; background: var(--bg); clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%); }
+  .panel .rays { position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg at 20% 105%, var(--bg) 0 6deg, var(--bg-2) 6deg 12deg); opacity: .7; }
+  .inner { position: absolute; left: 60px; top: 50px; right: 110px; }
+  .kick { display: inline-block; background: var(--accent); color: var(--paper); font-family: var(--slab); font-size: 25px; letter-spacing: 3px; padding: 10px 26px; box-shadow: 0 5px 0 var(--ink);
+    clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%, 4% 50%); }
+  .title { font-family: var(--display); font-size: 122px; line-height: 1; color: var(--accent); margin: 18px 0 4px; white-space: nowrap;
+    -webkit-text-stroke: 6px var(--ink); paint-order: stroke fill; text-shadow: 4px 4px 0 var(--ink), 8px 8px 0 var(--ink), 12px 12px 0 var(--ink); }
+  .sub { font-family: var(--script); font-size: 36px; color: var(--cool); margin: 6px 0 22px; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; gap: 18px; align-items: baseline; font-size: 31px; line-height: 1.22; color: var(--ink); margin-bottom: 16px; font-weight: 700; }
+  li::before { content: '\2605'; color: var(--accent); font-size: 30px; flex: none; }
+  li small { display: block; font-weight: 400; font-size: 23px; color: #4a3d2c; margin-top: 2px; }
+  .pills { position: absolute; left: 60px; bottom: 44px; display: flex; gap: 16px; }
+  .pill { background: var(--ink); color: var(--paper); border-radius: 40px; padding: 13px 28px; font-family: var(--slab); font-size: 26px; }
+  .pill.alt { background: var(--accent); }
+
+  .wall { position: absolute; left: 640px; right: 0; top: 0; bottom: 0; background: radial-gradient(circle at 60% 40%, #1c4658, #0f2733 70%); }
+  .shot { position: absolute; border-radius: 12px; overflow: hidden; border: 5px solid var(--gold); background: #000; box-shadow: 0 18px 36px rgba(0,0,0,.55); }
+  .shot img { display: block; width: 100%; }
+  .label { position: absolute; font-family: var(--display); color: var(--gold); letter-spacing: 1.5px; text-shadow: 0 3px 0 #0b1420; white-space: nowrap; }
+  .main { left: 730px; top: 44px; width: 1030px; }   .l-main { left: 740px; top: 640px; font-size: 32px; }
+  .s1 { left: 740px; top: 752px; width: 400px; transform: rotate(-1.5deg); }  .l1 { left: 745px; top: 700px; font-size: 26px; }
+  .s2 { left: 1180px; top: 752px; width: 400px; transform: rotate(1.2deg); } .l2 { left: 1188px; top: 700px; font-size: 26px; }
+  .ws { left: 1628px; top: 700px; width: 250px; transform: rotate(3deg); border-color: var(--paper); border-radius: 4px; }
+  .badge { position: absolute; left: 1778px; top: 40px; width: 118px; }
+</style>
+</head>
+<body>
+  <div class="wall"></div>
+  <div class="shot main"><img src="{{shots/main.jpg}}" alt=""></div>
+  <div class="label l-main" data-check="main label">★ {{WHAT THE BIG SCREENSHOT SHOWS}}</div>
+  <div class="shot s1"><img src="{{shots/second.jpg}}" alt=""></div><div class="label l1" data-check="label 1">{{SHORT LABEL}}</div>
+  <div class="shot s2"><img src="{{shots/third.jpg}}" alt=""></div><div class="label l2" data-check="label 2">{{SHORT LABEL}}</div>
+  <div class="shot ws"><img src="{{handouts/page-a.jpg}}" alt=""></div>
+  <img class="badge" src="{{logo-or-emblem.png}}" alt="">
+
+  <div class="panel"><div class="rays"></div>
+    <div class="inner">
+      <div class="kick">{{SUBJECT}}</div>
+      <div class="title" data-check="title">{{PRODUCT NAME}}</div>
+      <div class="sub">{{One-line promise}}</div>
+      <ul>
+        <li><span>{{Feature claim}}<small>{{concrete proof: counts, names}}</small></span></li>
+        <li><span>{{Feature claim}}<small>{{proof}}</small></span></li>
+        <li><span>{{Feature claim}}<small>{{proof}}</small></span></li>
+        <li><span>{{Feature claim}}<small>{{proof}}</small></span></li>
+        <li><span>{{Feature claim}}<small>{{proof}}</small></span></li>
+      </ul>
+    </div>
+    <div class="pills"><div class="pill">{{GRADES}}</div><div class="pill alt">{{NO PREP / NO LOGINS}}</div></div>
+  </div>
+</body>
+</html>

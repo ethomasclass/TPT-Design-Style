@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TpT preview: printables</title>
+<!-- 16:9 preview of the printable pages, render at 1920 x 1080:
+       node scripts/render.mjs printables.html 1920 1080 preview-printables.png
+     Up to five real pages side by side, each with a name and a one-line "what it does". For 3-4 pages,
+     widen .page (e.g. 440px) so they still fill the row. Pages are portrait images (letter ratio). -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root { --bg: #f4e6c4; --bg-2: #ead6a4; --paper: #fbf3de; --accent: #b3342e; --ink: #16263a;
+    --display: 'Rye', serif; --slab: 'Alfa Slab One', serif; --body: 'Atkinson Hyperlegible', sans-serif; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { width: 1920px; height: 1080px; overflow: hidden; position: relative; font-family: var(--body);
+    background: repeating-conic-gradient(from 0deg at 50% 118%, var(--bg) 0 5deg, var(--bg-2) 5deg 10deg); }
+  .top { position: absolute; left: 0; right: 0; top: 38px; text-align: center; }
+  .kick { display: inline-block; background: var(--accent); color: var(--paper); font-family: var(--slab); font-size: 30px; letter-spacing: 4px; padding: 12px 44px;
+    clip-path: polygon(0 0, 100% 0, 97% 50%, 100% 100%, 0 100%, 3% 50%); box-shadow: 0 6px 0 var(--ink); }
+  h1 { margin: 14px 0 0; font-family: var(--display); font-weight: 400; font-size: 92px; color: var(--ink); line-height: 1; }
+  h1 span { color: var(--accent); }
+  .row { position: absolute; left: 50px; right: 50px; top: 262px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .page { width: 352px; text-align: center; }
+  .sheet { background: #fff; border: 3px solid var(--ink); box-shadow: 12px 12px 0 var(--ink); }
+  .sheet img { display: block; width: 100%; }
+  .page:nth-child(odd) .sheet { transform: rotate(-1.6deg); } .page:nth-child(even) .sheet { transform: rotate(1.4deg); }
+  .cap { margin-top: 40px; font-family: var(--display); font-size: 36px; color: var(--accent); line-height: 1.05; }
+  .cap small { display: block; font-family: var(--body); font-weight: 700; font-size: 24px; color: var(--ink); margin-top: 10px; line-height: 1.25; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 34px; display: flex; justify-content: center; gap: 18px; }
+  .pill { background: var(--ink); color: var(--paper); border-radius: 40px; padding: 12px 30px; font-family: var(--slab); font-size: 25px; }
+  .pill.alt { background: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="top"><div class="kick">PRINT &amp; GO</div><h1>Printables <span>included</span></h1></div>
+  <div class="row">
+    <div class="page"><div class="sheet"><img src="{{handouts/1.jpg}}" alt=""></div><div class="cap" data-check="cap 1">{{Page name}}<small>{{what it does}}</small></div></div>
+    <div class="page"><div class="sheet"><img src="{{handouts/2.jpg}}" alt=""></div><div class="cap" data-check="cap 2">{{Page name}}<small>{{what it does}}</small></div></div>
+    <div class="page"><div class="sheet"><img src="{{handouts/3.jpg}}" alt=""></div><div class="cap" data-check="cap 3">{{Page name}}<small>{{what it does}}</small></div></div>
+    <div class="page"><div class="sheet"><img src="{{handouts/4.jpg}}" alt=""></div><div class="cap" data-check="cap 4">{{Page name}}<small>{{what it does}}</small></div></div>
+    <div class="page"><div class="sheet"><img src="{{handouts/5.jpg}}" alt=""></div><div class="cap" data-check="cap 5">{{Page name}}<small>{{what it does}}</small></div></div>
+  </div>
+  <div class="foot"><div class="pill">{{GRADES}}</div><div class="pill alt">{{e.g. GAME + READING + WRITING}}</div><div class="pill">{{NO PREP}}</div></div>
+</body>
+</html>

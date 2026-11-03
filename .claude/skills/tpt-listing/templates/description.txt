@@ -1,0 +1,41 @@
+★ {{HOOK HEADLINE IN CAPS, e.g. YOUR STUDENTS ARE THE SHARKS}} ★
+
+{{2-4 sentences: the situation, what students do, and the twist or payoff. End on a question or a challenge.}}
+
+━━━━━━━━━━━━━━━━━━━━
+
+HOW IT WORKS
+① {{step}}
+② {{step}}
+③ {{step}}
+④ {{step}}
+⑤ {{step}}
+
+━━━━━━━━━━━━━━━━━━━━
+
+WHAT'S INCLUDED
+✔ {{Main resource: name it, then the counts, e.g. "Interactive website: 5 voiced pitches, 45 illustrated exhibits"}}
+✔ {{Student reading: "Title" (N pages)}}
+✔ {{Check for Understanding: N multiple choice + N true/false}}
+✔ {{Student worksheet / tracker}}
+✔ {{Writing activity}}
+✔ {{Teacher tools / answer key / lesson plan}}
+
+━━━━━━━━━━━━━━━━━━━━
+
+HISTORICAL CONCEPTS TAUGHT
+• {{Big idea}}
+• {{Concept (named example)}}
+• {{Concept (named example)}}
+• {{Concept (court case or law, with year)}}
+• {{Concept}}
+
+SKILLS: {{skill}} • {{skill}} • {{skill}} • {{skill}}
+
+━━━━━━━━━━━━━━━━━━━━
+
+GRADES: {{8–12 U.S. History}}
+TIME: {{N class periods (what happens in each)}}
+TECH: {{e.g. a projector and a web browser. No logins, no downloads.}}
+
+{{Only if true: Voices and character art were created with AI tools. All history content was written and fact-checked for this lesson.}}
