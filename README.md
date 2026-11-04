@@ -37,6 +37,17 @@ Then ask for something like *"make a TpT thumbnail, previews and description for
 
 Rendering needs Node with Playwright (preinstalled on Claude's cloud machines) and `curl` for fonts.
 
+## Logo
+
+The Well Rounded Social Studies logo lives in `brand/logo/`:
+
+| File | Use |
+|---|---|
+| `wrss-logo-navy.png` | 1080 × 1080, globe on a navy square. Use where the logo sits on its own. |
+| `wrss-logo-transparent.png` | 1080 × 1080, globe and stand on a transparent background. Use on the navy lesson plan header and other navy surfaces. |
+
+The logo goes on TpT images and teacher docs only, never on student pages.
+
 ## Updating the zip
 
 After editing the skill, rebuild the upload file from the repo root:
